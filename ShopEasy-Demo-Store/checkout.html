@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - ShopEasy Demo Store</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">ShopEasy <span>Demo</span></div>
+            <nav id="main-nav">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="cart.html" class="cart-icon">
+                    Cart
+                    <span class="cart-badge">0</span>
+                </a>
+                <a href="login.html" class="auth-link">Login</a>
+                <a href="register.html" class="auth-link">Register</a>
+                <a href="orders.html" class="user-link" style="display:none;">Orders</a>
+                <a href="profile.html" class="user-link" style="display:none;">Profile</a>
+                <a href="#" class="user-link" style="display:none;" onclick="handleLogout()">Logout</a>
+                <span class="user-name-display" style="display:none;"></span>
+            </nav>
+        </div>
+    </header>
+
+    <div id="notification-container"></div>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1>Checkout</h1>
+                <p>Complete your purchase</p>
+            </div>
+
+            <!-- ============================================================
+            CHECKOUT FORM
+            ---------------------------------------------------------------
+            QA Note for Testers:
+            This form processes the final order. Things to test:
+
+            1. FORM VALIDATION:
+               - What happens if you submit with empty fields?
+               - Are specific fields required or optional?
+               - Can you place an order with incomplete address?
+
+            2. CREDIT CARD VALIDATION:
+               - Card number: exactly 16 digits, numbers only
+               - BUG HUNT: What happens if you enter letters?
+               - BUG HUNT: What if CVV is 1 or 2 digits?
+               - What if card number is 15 or 17 digits?
+               - What about special characters in card number?
+
+            3. AUTHENTICATION CHECK:
+               - What happens if a non-logged-in user accesses this page?
+               - Can you directly navigate to checkout.html without login?
+
+            4. EMPTY CART:
+               - Clear your cart, then navigate to checkout
+               - Can you place an order with an empty cart?
+
+            5. ORDER PLACEMENT:
+               - After successful order, does it redirect to orders page?
+               - Is the cart cleared after order placement?
+               - Does the order appear in order history?
+               - Are all order details correct (items, prices, totals)?
+
+            6. EDGE CASES:
+               - Rapid double-click on "Place Order" — duplicate order?
+               - Browser back button after order
+               - Refresh during checkout process
+            ============================================================ -->
+
+            <form class="checkout-form" onsubmit="handleCheckout(event)">
+                <!-- Shipping Information -->
+                <div class="card">
+                    <h3 style="color:#1a3a5c; margin-bottom:15px;">Shipping Information</h3>
+
+                    <div class="form-group">
+                        <label for="checkout-name">Full Name</label>
+                        <input type="text" id="checkout-name" class="form-control" placeholder="John Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="checkout-address">Street Address</label>
+                        <input type="text" id="checkout-address" class="form-control" placeholder="123 Main Street">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="checkout-city">City</label>
+                            <input type="text" id="checkout-city" class="form-control" placeholder="New York">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-zip">ZIP Code</label>
+                            <input type="text" id="checkout-zip" class="form-control" placeholder="10001">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Information -->
+                <div class="card">
+                    <h3 style="color:#1a3a5c; margin-bottom:15px;">Payment Information</h3>
+
+                    <div class="form-group">
+                        <label for="checkout-card">Card Number</label>
+                        <input type="text" id="checkout-card" class="form-control" placeholder="1234 5678 9012 3456" maxlength="16">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="checkout-expiry">Expiry Date</label>
+                            <input type="text" id="checkout-expiry" class="form-control" placeholder="MM/YY">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-cvv">CVV</label>
+                            <input type="text" id="checkout-cvv" class="form-control" placeholder="123">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="card">
+                    <h3 style="color:#1a3a5c; margin-bottom:15px;">Review Your Order</h3>
+                    <p style="color:#666;">Please review your cart items before placing the order.</p>
+                    <a href="cart.html" class="btn btn-outline btn-sm mt-10">Edit Cart</a>
+                </div>
+
+                <button type="submit" class="btn btn-success btn-block" style="padding: 15px; font-size: 1.1rem;">
+                    Place Order
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ShopEasy Demo Store — Built for QA Testing Practice</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

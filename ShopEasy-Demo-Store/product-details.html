@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - ShopEasy Demo Store</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">ShopEasy <span>Demo</span></div>
+            <nav id="main-nav">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="cart.html" class="cart-icon">
+                    Cart
+                    <span class="cart-badge">0</span>
+                </a>
+                <a href="login.html" class="auth-link">Login</a>
+                <a href="register.html" class="auth-link">Register</a>
+                <a href="orders.html" class="user-link" style="display:none;">Orders</a>
+                <a href="profile.html" class="user-link" style="display:none;">Profile</a>
+                <a href="#" class="user-link" style="display:none;" onclick="handleLogout()">Logout</a>
+                <span class="user-name-display" style="display:none;"></span>
+            </nav>
+        </div>
+    </header>
+
+    <div id="notification-container"></div>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1>Product Details</h1>
+                <p>View product information and add to cart</p>
+            </div>
+
+            <!-- ============================================================
+            PRODUCT DETAILS
+            ---------------------------------------------------------------
+            QA Note for Testers:
+            This page shows full product details. Things to test:
+
+            1. PRODUCT INFORMATION:
+               - Does all product info display correctly?
+               - Is the price formatted with 2 decimal places?
+               - Does the stock status show correctly?
+               - What happens for out-of-stock products?
+
+            2. QUANTITY SELECTOR:
+               - Can you type a custom quantity?
+               - What happens with negative numbers?
+               - What happens with 0 quantity?
+               - What about decimal quantities (1.5)?
+               - Very large quantities (999999)?
+
+            3. ADD TO CART:
+               - Click "Add to Cart" — does it show a confirmation?
+               - Does the cart badge update in the navigation?
+               - Add the same product twice — does quantity increase?
+               - Can you add out-of-stock items to cart?
+               - Does the page scroll to top after adding?
+
+            4. URL PARAMETERS:
+               - What if someone manually changes ?id=999 (invalid product)?
+               - What if id parameter is missing?
+               - What if id=abc (non-numeric)?
+
+            5. BROWSER NAVIGATION:
+               - Use browser back/forward buttons
+               - Refresh the page — does the product still load?
+               - Direct URL access with product ID
+            ============================================================ -->
+
+            <div id="product-detail-container">
+                <!-- Product details loaded dynamically by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ShopEasy Demo Store — Built for QA Testing Practice</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

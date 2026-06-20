@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - ShopEasy Demo Store</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">ShopEasy <span>Demo</span></div>
+            <nav id="main-nav">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="cart.html" class="cart-icon">
+                    Cart
+                    <span class="cart-badge">0</span>
+                </a>
+                <a href="login.html" class="auth-link">Login</a>
+                <a href="register.html" class="auth-link">Register</a>
+                <a href="orders.html" class="user-link" style="display:none;">Orders</a>
+                <a href="profile.html" class="user-link" style="display:none;">Profile</a>
+                <a href="#" class="user-link" style="display:none;" onclick="handleLogout()">Logout</a>
+                <span class="user-name-display" style="display:none;"></span>
+            </nav>
+        </div>
+    </header>
+
+    <div id="notification-container"></div>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1>Our Products</h1>
+                <p>Browse, search, and find your perfect item</p>
+            </div>
+
+            <!-- ============================================================
+            SEARCH AND FILTER SECTION
+            ---------------------------------------------------------------
+            QA Note for Testers:
+            This section lets users search and filter products. Things to test:
+
+            1. SEARCH FUNCTIONALITY:
+               - Search by product name (e.g., "headphones", "Headphones")
+               - Search is case-sensitive? Try "HEADPHONES" vs "headphones"
+               - Partial search (e.g., "phone" should find "Headphones")
+               - Search with special characters
+               - Empty search — should show all products or "No results"?
+
+            2. CATEGORY FILTER:
+               - Filter by each category
+               - Change filter back to "All Categories" — do all products return?
+               - Multiple rapid filter changes
+
+            3. PRICE RANGE FILTER:
+               - Filter with valid min and max prices
+               - Filter with min price only
+               - Filter with max price only
+               - BUG HUNT: What happens when min > max?
+               - Boundary values ($0, very high numbers, negative numbers)
+
+            4. COMBINED FILTERS:
+               - Search + category + price range together
+               - Do the filters work correctly together?
+
+            5. PRODUCT DISPLAY:
+               - Do all products have images?
+               - Are prices formatted correctly ($XX.XX)?
+               - Is stock status accurate?
+               - What happens when stock is 0?
+            ============================================================ -->
+
+            <div class="filters">
+                <div class="form-group">
+                    <label for="search-input">Search Products</label>
+                    <input type="text" id="search-input" class="form-control" placeholder="Search by name...">
+                </div>
+
+                <div class="form-group">
+                    <label for="category-filter">Category</label>
+                    <select id="category-filter" class="form-control">
+                        <option value="all">All Categories</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="min-price">Min Price ($)</label>
+                    <input type="number" id="min-price" class="form-control" placeholder="Min" min="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="max-price">Max Price ($)</label>
+                    <input type="number" id="max-price" class="form-control" placeholder="Max" min="0">
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div id="product-container" class="product-grid">
+                <!-- Products loaded dynamically by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ShopEasy Demo Store — Built for QA Testing Practice</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

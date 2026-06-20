@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - ShopEasy Demo Store</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">ShopEasy <span>Demo</span></div>
+            <nav id="main-nav">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="cart.html" class="cart-icon">
+                    Cart
+                    <span class="cart-badge">0</span>
+                </a>
+                <a href="login.html" class="auth-link">Login</a>
+                <a href="register.html" class="auth-link">Register</a>
+                <a href="orders.html" class="user-link" style="display:none;">Orders</a>
+                <a href="profile.html" class="user-link" style="display:none;">Profile</a>
+                <a href="#" class="user-link" style="display:none;" onclick="handleLogout()">Logout</a>
+                <span class="user-name-display" style="display:none;"></span>
+            </nav>
+        </div>
+    </header>
+
+    <div id="notification-container"></div>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1>Welcome Back</h1>
+                <p>Login to your ShopEasy account</p>
+            </div>
+
+            <!-- ============================================================
+            LOGIN FORM
+            ---------------------------------------------------------------
+            QA Note for Testers:
+            This form authenticates existing users. Things to test:
+
+            1. SUCCESSFUL LOGIN:
+               - Register first, then login with the same credentials
+               - Verify redirect to products page
+
+            2. FAILED LOGIN SCENARIOS:
+               - Wrong password for existing user
+               - Unregistered email address
+               - Both fields empty
+               - Only email filled, no password
+
+            3. ERROR MESSAGES:
+               - Are error messages helpful and accurate?
+               - Is there a security concern with revealing whether
+                 an email exists or not?
+
+            4. CASE SENSITIVITY:
+               - Does "Test@Example.com" work if registered as "test@example.com"?
+               - Is the password case-sensitive? (Should be!)
+
+            5. SESSION MANAGEMENT:
+               - After login, navigate to other pages — are you still logged in?
+               - Refresh the page — does the session persist?
+               - Close and reopen the browser — are you still logged in?
+
+            6. UI TESTING:
+               - The "Forgot Password?" link works
+               - The "Create Account" link works
+               - Tab order: email → password → submit button
+               - Press Enter to submit the form
+            ============================================================ -->
+
+            <form class="auth-form" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="login-email">Email Address</label>
+                    <input type="email" id="login-email" class="form-control" placeholder="Enter your email">
+                </div>
+
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" class="form-control" placeholder="Enter your password">
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+
+                <div class="form-footer">
+                    <a href="forgot-password.html">Forgot Password?</a>
+                    <br><br>
+                    Don't have an account? <a href="register.html">Register here</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ShopEasy Demo Store — Built for QA Testing Practice</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

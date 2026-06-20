@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEasy Demo Store - QA Testing Practice</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- ============================================================
+    HEADER / NAVIGATION
+    ---------------------------------------------------------------
+    QA Note for Testers:
+    The navigation bar is a critical UI element. Test that:
+    - All links navigate to correct pages
+    - Cart badge updates when items are added
+    - User name displays correctly when logged in
+    - Links change based on login state (auth links vs user links)
+    - Navigation is responsive on mobile devices
+    ============================================================ -->
+
+    <header>
+        <div class="container">
+            <div class="logo">ShopEasy <span>Demo</span></div>
+            <nav id="main-nav">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="cart.html" class="cart-icon">
+                    Cart
+                    <span class="cart-badge">0</span>
+                </a>
+                <a href="login.html" class="auth-link">Login</a>
+                <a href="register.html" class="auth-link">Register</a>
+                <a href="orders.html" class="user-link" style="display:none;">Orders</a>
+                <a href="profile.html" class="user-link" style="display:none;">Profile</a>
+                <a href="#" class="user-link" style="display:none;" onclick="handleLogout()">Logout</a>
+                <span class="user-name-display" style="display:none;"></span>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================================
+    NOTIFICATION CONTAINER
+    ---------------------------------------------------------------
+    QA Note: Flash messages appear here after user actions
+    (login success, errors, etc.). Test that messages display
+    correctly and auto-dismiss after the timeout.
+    ============================================================ -->
+
+    <div id="notification-container"></div>
+
+    <!-- ============================================================
+    MAIN CONTENT - HOMEPAGE
+    ---------------------------------------------------------------
+    QA Note: The homepage introduces the application. Test:
+    - All elements display correctly
+    - Links to products page work
+    - Login/Register buttons work
+    - Responsive layout on different screen sizes
+    ============================================================ -->
+
+    <main>
+        <div class="container">
+
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1>Welcome to ShopEasy Demo Store</h1>
+                <p>A practice e-commerce application for QA testing and learning</p>
+                <a href="products.html" class="btn btn-warning btn-lg">Start Shopping</a>
+                <a href="register.html" class="btn btn-outline btn-lg" style="border-color: white; color: white; margin-left: 10px;">Create Account</a>
+            </section>
+
+            <!-- Features Section -->
+            <h2 style="text-align:center; color:#1a3a5c; margin-bottom:10px;">Why This Project?</h2>
+            <p style="text-align:center; color:#666; margin-bottom:30px;">Built for QA learners to practice real-world testing</p>
+
+            <section class="features">
+                <div class="feature-card">
+                    <div class="icon">🛍️</div>
+                    <h3>Real E-Commerce Features</h3>
+                    <p>Registration, login, product search, cart, checkout, and order history — just like a real online store.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">🔍</div>
+                    <h3>Practice Testing</h3>
+                    <p>Explore the application thoroughly. Find UI issues, functional problems, validation gaps, and edge cases.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">📝</div>
+                    <h3>Learn Documentation</h3>
+                    <p>Use the QA templates to write test plans, test cases, and bug reports like a professional tester.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">📚</div>
+                    <h3>Built for Beginners</h3>
+                    <p>Simple code, clear comments, and a full learning guide to help you start your QA journey.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">🐛</div>
+                    <h3>Find the Bugs</h3>
+                    <p>The application intentionally contains bugs for you to discover. Practice your bug-finding skills!</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">📊</div>
+                    <h3>Build Your Portfolio</h3>
+                    <p>Use this project to demonstrate your QA skills, documentation ability, and testing methodology to employers.</p>
+                </div>
+            </section>
+
+            <!-- Quick Start Guide -->
+            <section style="background: white; border-radius: 8px; padding: 30px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); margin: 30px 0;">
+                <h2 style="color:#1a3a5c; margin-bottom:15px;">Quick Start for Testers</h2>
+                <ol style="margin-left:20px; line-height:2;">
+                    <li><strong>Explore</strong> — Browse all pages and features without any specific goal first.</li>
+                    <li><strong>Register</strong> — Create an account and test the registration flow.</li>
+                    <li><strong>Shop</strong> — Search products, apply filters, and add items to cart.</li>
+                    <li><strong>Checkout</strong> — Complete a purchase and verify the order appears in history.</li>
+                    <li><strong>Document</strong> — Use QA templates to write test cases and bug reports.</li>
+                    <li><strong>Learn</strong> — Read the <a href="QA_LEARNING_GUIDE.md">QA Learning Guide</a> for testing fundamentals.</li>
+                </ol>
+            </section>
+        </div>
+    </main>
+
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ShopEasy Demo Store — Built for QA Testing Practice</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

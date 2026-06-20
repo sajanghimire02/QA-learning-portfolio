@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - ShopEasy Demo Store</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">ShopEasy <span>Demo</span></div>
+            <nav id="main-nav">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="cart.html" class="cart-icon">
+                    Cart
+                    <span class="cart-badge">0</span>
+                </a>
+                <a href="login.html" class="auth-link">Login</a>
+                <a href="register.html" class="auth-link">Register</a>
+                <a href="orders.html" class="user-link" style="display:none;">Orders</a>
+                <a href="profile.html" class="user-link" style="display:none;">Profile</a>
+                <a href="#" class="user-link" style="display:none;" onclick="handleLogout()">Logout</a>
+                <span class="user-name-display" style="display:none;"></span>
+            </nav>
+        </div>
+    </header>
+
+    <div id="notification-container"></div>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1>Shopping Cart</h1>
+                <p>Review your items before checkout</p>
+            </div>
+
+            <!-- ============================================================
+            CART CONTENT
+            ---------------------------------------------------------------
+            QA Note for Testers:
+            This page shows the user's shopping cart. Things to test:
+
+            1. DISPLAY:
+               - All added items show correctly with name, price, image
+               - Quantities display correctly
+               - Each item's subtotal (price × quantity) is correct
+               - Multiple items with different quantities
+
+            2. MODIFYING QUANTITIES:
+               - Click + to increase quantity
+               - Click − to decrease quantity
+               - BUG HUNT: What happens when you decrease below 1?
+               - Does the total update when you change quantities?
+
+            3. REMOVING ITEMS:
+               - Click Remove — does the item disappear?
+               - Does the total update after removal?
+               - Can you remove all items? What happens to the cart?
+
+            4. PRICE CALCULATIONS:
+               - Subtotal: sum of all item totals
+               - Shipping: free above $50, otherwise $5.99
+               - Tax: 8% of subtotal
+               - Total: subtotal + shipping + tax
+               - Are all calculations mathematically correct?
+
+            5. EDGE CASES:
+               - Empty cart (add items, remove all, check display)
+               - Cart with one item at $0.01 price
+               - Cart with many items
+               - Browser back after checkout — does cart persist?
+
+            6. CHECKOUT BUTTON:
+               - Does it navigate to the checkout page?
+               - What if user is not logged in?
+            ============================================================ -->
+
+            <div id="cart-container">
+                <!-- Cart items loaded dynamically -->
+            </div>
+
+            <!-- Cart Summary -->
+            <div id="cart-summary-section" class="cart-summary" style="display:none;">
+                <h3>Order Summary</h3>
+                <div class="total-row">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div class="total-row">
+                    <span>Shipping</span>
+                    <span id="cart-shipping">$0.00</span>
+                </div>
+                <div class="total-row">
+                    <span>Tax (8%)</span>
+                    <span id="cart-tax">$0.00</span>
+                </div>
+                <div class="total-row grand-total">
+                    <span>Total</span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+                <a href="checkout.html" class="btn btn-success btn-block mt-20">Proceed to Checkout</a>
+                <a href="products.html" class="btn btn-outline btn-block mt-10">Continue Shopping</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ShopEasy Demo Store — Built for QA Testing Practice</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

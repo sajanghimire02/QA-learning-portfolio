@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - ShopEasy Demo Store</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">ShopEasy <span>Demo</span></div>
+            <nav id="main-nav">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="cart.html" class="cart-icon">
+                    Cart
+                    <span class="cart-badge">0</span>
+                </a>
+                <a href="login.html" class="auth-link">Login</a>
+                <a href="register.html" class="auth-link">Register</a>
+                <a href="orders.html" class="user-link" style="display:none;">Orders</a>
+                <a href="profile.html" class="user-link" style="display:none;">Profile</a>
+                <a href="#" class="user-link" style="display:none;" onclick="handleLogout()">Logout</a>
+                <span class="user-name-display" style="display:none;"></span>
+            </nav>
+        </div>
+    </header>
+
+    <div id="notification-container"></div>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1>My Profile</h1>
+                <p>Manage your account information</p>
+            </div>
+
+            <!-- ============================================================
+            PROFILE PAGE
+            ---------------------------------------------------------------
+            QA Note for Testers:
+            This page shows and lets users edit their profile. Things to test:
+
+            1. DISPLAY:
+               - Does profile information load correctly for logged-in users?
+               - BUG HUNT: What shows up for fields that were never set?
+               - Does the email show correctly?
+
+            2. UPDATE PROFILE:
+               - Change name, phone, address — does it save?
+               - Does the navigation bar update with the new name?
+               - Logout and login again — are changes persisted?
+
+            3. PHONE NUMBER VALIDATION:
+               - BUG HUNT: Can you enter letters in the phone field?
+               - What about special characters?
+               - Very long phone numbers?
+               - International format?
+
+            4. AUTHENTICATION CHECK:
+               - What if a non-logged-in user accesses this page?
+               - Direct URL access to profile.html without login
+
+            5. FIELD LIMITS:
+               - Very long name (100+ characters)
+               - Empty name on save — does it revert to previous?
+               - Special characters in name or address
+            ============================================================ -->
+
+            <div id="profile-container">
+                <!-- Profile content loaded dynamically -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ShopEasy Demo Store — Built for QA Testing Practice</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

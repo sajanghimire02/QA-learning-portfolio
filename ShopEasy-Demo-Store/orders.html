@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History - ShopEasy Demo Store</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">ShopEasy <span>Demo</span></div>
+            <nav id="main-nav">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="cart.html" class="cart-icon">
+                    Cart
+                    <span class="cart-badge">0</span>
+                </a>
+                <a href="login.html" class="auth-link">Login</a>
+                <a href="register.html" class="auth-link">Register</a>
+                <a href="orders.html" class="user-link" style="display:none;">Orders</a>
+                <a href="profile.html" class="user-link" style="display:none;">Profile</a>
+                <a href="#" class="user-link" style="display:none;" onclick="handleLogout()">Logout</a>
+                <span class="user-name-display" style="display:none;"></span>
+            </nav>
+        </div>
+    </header>
+
+    <div id="notification-container"></div>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1>Order History</h1>
+                <p>View your past orders</p>
+            </div>
+
+            <!-- ============================================================
+            ORDER HISTORY
+            ---------------------------------------------------------------
+            QA Note for Testers:
+            This page shows all orders placed by the user. Things to test:
+
+            1. ORDER DISPLAY:
+               - After placing an order, does it appear here?
+               - Are order details correct (ID, date, items, totals)?
+               - Is the order status displayed correctly?
+
+            2. MULTIPLE ORDERS:
+               - Place multiple orders — do they all appear?
+               - BUG HUNT: Are orders sorted newest first or oldest first?
+               - What happens if there are many orders?
+
+            3. EMPTY STATE:
+               - What does the page look like with no orders?
+               - Is the empty state message helpful?
+
+            4. AUTHENTICATION:
+               - What if a non-logged-in user accesses this page?
+               - Does it prompt login?
+
+            5. ORDER DETAILS:
+               - Are all items listed within each order?
+               - Are quantities and prices correct?
+               - Is the total correct (matching checkout calculation)?
+
+            6. DATA PERSISTENCE:
+               - Close and reopen browser — do orders persist?
+               - Clear browser data — what happens?
+            ============================================================ -->
+
+            <div id="orders-container">
+                <!-- Orders loaded dynamically -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ShopEasy Demo Store — Built for QA Testing Practice</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
